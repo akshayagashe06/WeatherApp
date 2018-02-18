@@ -37,7 +37,8 @@
     $temp='';
     foreach($phpObj["query"]["results"]["channel"]["units"] as $item)
     {
-        echo $item["distance"];
+        print $item['distance'];
+        $temp = $item['distance'];
         break;
     }
 ?>
