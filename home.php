@@ -29,18 +29,10 @@
         // close curl resource to free up system resources 
         curl_close($ch);
 
-//		print $output;	
-//    $xml = simplexml_load_string($output);
-//    
-//    $temp = (String)$xml->query->results->channel->link->children('yweather',true)->wind->attributes()->chill;
     $phpObj =  json_decode($output,true);
     $temp='';
-    foreach($phpObj["query"]["results"]["channel"]["units"] as $item)
-    {
-        print $item['distance'];
-        $temp = $item['distance'];
-        break;
-    }
+    $temp = $phpObj["query"]["results"]["channel"]["wind"]["chill"];
+
 ?>
     <div class="container">
        <div class="col-lg-12 col-md-12 col-ls-12 weather_class">
