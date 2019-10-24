@@ -1,4 +1,6 @@
 <?php
+
+// Base URL for yahoo APIs.
     $BASE_URL = "http://query.yahooapis.com/v1/public/yql";
     $yql_query = 'select wind from weather.forecast where woeid in (select woeid from geo.places(1) where text="chicago, il")';
     $yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) . "&format=json";
